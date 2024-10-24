@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   geometry_msgs
+  actionlib_msgs
 )
 
 # Message file
@@ -22,13 +23,20 @@ add_message_files(
   DIRECTORY
     msg
   FILES
-    PseudoGridMap.msg
+    MoveBaseResult.msg
+    MoveBaseActionResult.msg
+    MoveBaseFeedback.msg
+    MoveBaseActionFeedback.msg
+    MoveBaseActionGoal.msg
+    MoveBaseGoal.msg
+    MoveBaseAction.msg
 )
 
 generate_messages(
   DEPENDENCIES
     std_msgs
     geometry_msgs
+    actionlib_msgs
 )
 
 catkin_package(

@@ -14,10 +14,17 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(actionlib_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/PseudoGridMap.msg"
-  DEPENDENCIES geometry_msgs std_msgs
+  "msg/MoveBaseResult.msg"
+  "msg/MoveBaseActionResult.msg"
+  "msg/MoveBaseFeedback.msg"
+  "msg/MoveBaseActionFeedback.msg"
+  "msg/MoveBaseActionGoal.msg"
+  "msg/MoveBaseGoal.msg"
+  "msg/MoveBaseAction.msg"
+  DEPENDENCIES geometry_msgs std_msgs actionlib_msgs
  )
 
 
